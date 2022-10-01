@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="formBtnDatLich.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formBtnDatLich.Designer.cs">
-      <DependentUpon>formBtnDatLich.cs</DependentUpon>
-    </Compile>
     <Compile Include="formChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,9 +91,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="formBtnDatLich.resx">
-      <DependentUpon>formBtnDatLich.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="formChinh.resx">
       <DependentUpon>formChinh.cs</DependentUpon>
     </EmbeddedResource>
