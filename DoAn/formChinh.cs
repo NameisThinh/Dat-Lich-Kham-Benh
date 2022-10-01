@@ -79,5 +79,12 @@ namespace DoAn
             dn.ShowDialog();
 
         }
+
+        private void btnHenDatLich_Click(object sender, EventArgs e)
+        {
+            panel3.Controls.Clear();
+            formBtnDatLich hen = new formBtnDatLich();
+            loadFormNoiDung(hen);
+        }
     }
 }
