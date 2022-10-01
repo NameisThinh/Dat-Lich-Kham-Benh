@@ -32,8 +32,9 @@ namespace DoAn
         {
             tsTraCuu.Visible = true;
             tsQuanLy.Visible = true;
-            
-            
+            lbThongTin.Text = tsQuanLy.Text.ToUpper();
+
+
 
         }
 
@@ -43,6 +44,7 @@ namespace DoAn
             tsQuanLy.Visible = false;
             tsDangXuat.Enabled = false;
             panel3.Controls.Clear();
+            lbThongTin.Text = tsGioiThieu.Text.ToUpper();
             formGioiThieu gt = new formGioiThieu();
             loadFormNoiDung(gt);
             toolStrip1.Site = panel2.Site;
@@ -50,6 +52,7 @@ namespace DoAn
 
         private void tsDatLich_Click(object sender, EventArgs e)
         {
+            lbThongTin.Text = tsDatLich.Text.ToUpper();
             panel3.Controls.Clear();
             formDatLich dl = new formDatLich();
             loadFormNoiDung(dl);
@@ -62,6 +65,7 @@ namespace DoAn
 
         private void tsHuongDan_Click(object sender, EventArgs e)
         {
+            lbThongTin.Text = tsHuongDan.Text.ToUpper();
             panel3.Controls.Clear();
             formHuongDan hd = new formHuongDan();
             loadFormNoiDung(hd);
@@ -70,6 +74,7 @@ namespace DoAn
 
         private void tsTraCuu_Click(object sender, EventArgs e)
         {
+            lbThongTin.Text = tsTraCuu.Text.ToUpper();
             panel3.Controls.Clear();
             formTraCuu tc = new formTraCuu();
             loadFormNoiDung(tc);
@@ -78,6 +83,7 @@ namespace DoAn
 
         private void tsGioiThieu_Click(object sender, EventArgs e)
         {
+            lbThongTin.Text = tsGioiThieu.Text.ToUpper();
             panel3.Controls.Clear();
             formGioiThieu gt = new formGioiThieu();
             loadFormNoiDung(gt);
@@ -115,6 +121,7 @@ namespace DoAn
 
         private void tsQuanLy_Click(object sender, EventArgs e)
         {
+            lbThongTin.Text = tsQuanLy.Text.ToUpper();
             panel3.Controls.Clear();
             formQuanLy ql = new formQuanLy();
             loadFormNoiDung(ql);

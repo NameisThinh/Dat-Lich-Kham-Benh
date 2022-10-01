@@ -20,8 +20,6 @@ namespace DoAn
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             formChinh fc = new formChinh();
-            formDangNhap dn = new formDangNhap();
-
             if (txtTenDangNhap.Text== "" && txtMatKhau.Text== "")
             {
                 fc.loadFormQuanLy();

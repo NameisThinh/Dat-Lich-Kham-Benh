@@ -84,10 +84,11 @@
             // 
             // lbThongTin
             // 
+            this.lbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbThongTin.AutoSize = true;
             this.lbThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lbThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lbThongTin.Location = new System.Drawing.Point(489, 59);
+            this.lbThongTin.Location = new System.Drawing.Point(531, 60);
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(0, 51);
             this.lbThongTin.TabIndex = 1;
