@@ -28,21 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(106, 126);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(150, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ádasdnjsahdsahdsalda";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(230, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "adasdnksajdklsa";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // formGioiThieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(1151, 745);
+            this.ClientSize = new System.Drawing.Size(767, 477);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "formGioiThieu";
             this.Text = "Giới thiệu";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
