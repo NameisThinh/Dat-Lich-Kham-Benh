@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DoAn
 {
@@ -18,22 +19,6 @@ namespace DoAn
             txtKhac.Visible = false;
             
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_Click(object sender, EventArgs e)
-        {
-            textBox4.Text = "";
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void rdbkhac_CheckedChanged(object sender, EventArgs e)
         {
             
@@ -45,6 +30,31 @@ namespace DoAn
             {
                 txtKhac.Visible = false;
             }
+        }
+
+        private void txthoten_Click(object sender, EventArgs e)
+        {
+            txthoten.Text = "";
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            txtEmail.Text = "";
+        }
+
+        private void txtSdt_Click(object sender, EventArgs e)
+        {
+            txtSdt.Text = "";
+        }
+
+        private void txtNamsinh_Click(object sender, EventArgs e)
+        {
+            txtNamsinh.Text = "";
+        }
+
+        private void txtThongTinThem_Click(object sender, EventArgs e)
+        {
+            txtThongTinThem.Text = "";
         }
     }
 }

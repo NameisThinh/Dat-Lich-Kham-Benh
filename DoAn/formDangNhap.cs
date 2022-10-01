@@ -16,5 +16,19 @@ namespace DoAn
         {
             InitializeComponent();
         }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            formChinh fc = new formChinh();
+            formDangNhap dn = new formDangNhap();
+
+            if (txtTenDangNhap.Text== "" && txtMatKhau.Text== "")
+            {
+                fc.loadFormQuanLy();
+                this.Hide();
+                //dn.Visible=false;
+                
+            }
+        }
     }
 }

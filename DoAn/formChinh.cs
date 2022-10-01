@@ -19,7 +19,7 @@ namespace DoAn
 
         public void loadFormNoiDung(Form formNoiDung )
         {
-            tsTraCuu.Enabled = false;
+            
             formNoiDung.FormBorderStyle = FormBorderStyle.None;
             formNoiDung.MdiParent = this;
             formNoiDung.Size = panel3.Size;
@@ -28,13 +28,24 @@ namespace DoAn
             formNoiDung.Show();
             
         }
+        public void loadFormQuanLy()
+        {
+            tsTraCuu.Visible = true;
+            tsQuanLy.Visible = true;
+            
+            
+
+        }
 
         private void formChinh_Load(object sender, EventArgs e)
         {
+            tsTraCuu.Visible = false;
+            tsQuanLy.Visible = false;
+            tsDangXuat.Enabled = false;
+            panel3.Controls.Clear();
             formGioiThieu gt = new formGioiThieu();
             loadFormNoiDung(gt);
             toolStrip1.Site = panel2.Site;
-            //lbThongTin.Text = 
         }
 
         private void tsDatLich_Click(object sender, EventArgs e)
@@ -77,14 +88,43 @@ namespace DoAn
         {
             formDangNhap dn = new formDangNhap();
             dn.ShowDialog();
+            loadFormQuanLy();
+            if (tsQuanLy.Visible == true)
+            {
+                tsDangNhap.Enabled = false;
+                tsDangXuat.Enabled = true;
+                panel3.Controls.Clear();
+                formQuanLy ql = new formQuanLy();
+                loadFormNoiDung(ql);
 
+            }
+           
         }
 
         private void btnHenDatLich_Click(object sender, EventArgs e)
         {
             panel3.Controls.Clear();
-            formBtnDatLich hen = new formBtnDatLich();
-            loadFormNoiDung(hen);
+            formBtnDatLich dl = new formBtnDatLich();
+            loadFormNoiDung(dl);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tsQuanLy_Click(object sender, EventArgs e)
+        {
+            panel3.Controls.Clear();
+            formQuanLy ql = new formQuanLy();
+            loadFormNoiDung(ql);
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formChinh_Load(sender, e);
+            tsDangNhap.Enabled = true;
+
         }
     }
 }

@@ -112,6 +112,9 @@
     <EmbeddedResource Include="formGioiThieu.resx">
       <DependentUpon>formGioiThieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formQuanLy.resx">
+      <DependentUpon>formQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
