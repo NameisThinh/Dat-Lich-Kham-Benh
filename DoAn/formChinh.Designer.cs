@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formChinh));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnHenDatLich = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbThongTin = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -42,7 +43,6 @@
             this.tsTraCuu = new System.Windows.Forms.ToolStripButton();
             this.tsHuongDan = new System.Windows.Forms.ToolStripButton();
             this.tsThoat = new System.Windows.Forms.ToolStripButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -54,7 +54,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 595);
             this.panel1.TabIndex = 0;
@@ -65,12 +65,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnHenDatLich);
             this.panel3.Location = new System.Drawing.Point(295, 73);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(757, 522);
             this.panel3.TabIndex = 2;
+            // 
+            // btnHenDatLich
+            // 
+            this.btnHenDatLich.Location = new System.Drawing.Point(601, 373);
+            this.btnHenDatLich.Name = "btnHenDatLich";
+            this.btnHenDatLich.Size = new System.Drawing.Size(93, 49);
+            this.btnHenDatLich.TabIndex = 0;
+            this.btnHenDatLich.Text = "Đặt Lịch";
+            this.btnHenDatLich.UseVisualStyleBackColor = true;
+            this.btnHenDatLich.Click += new System.EventHandler(this.btnHenDatLich_Click);
             // 
             // panel2
             // 
@@ -80,7 +90,7 @@
             this.panel2.Controls.Add(this.lbThongTin);
             this.panel2.Controls.Add(this.toolStrip1);
             this.panel2.Location = new System.Drawing.Point(295, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(757, 73);
             this.panel2.TabIndex = 1;
@@ -201,15 +211,6 @@
             this.tsThoat.Text = "Thoát";
             this.tsThoat.Click += new System.EventHandler(this.tsThoat_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(601, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Đặt Lịch";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // formChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,7 +220,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formChinh";
             this.Text = "Chương trình quản lý đặt lịch khám";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -247,6 +248,6 @@
         private System.Windows.Forms.ToolStripMenuItem đăngNhậpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton tsThoat;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHenDatLich;
     }
 }
