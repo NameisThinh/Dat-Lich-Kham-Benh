@@ -44,6 +44,8 @@
             this.tsThoat = new System.Windows.Forms.ToolStripButton();
             this.tsThongKe = new System.Windows.Forms.ToolStripButton();
             this.tsHuongDan = new System.Windows.Forms.ToolStripButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +66,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Location = new System.Drawing.Point(442, 114);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1136, 816);
@@ -219,6 +222,15 @@
             this.tsHuongDan.ToolTipText = "toolStripButton4";
             this.tsHuongDan.Click += new System.EventHandler(this.tsHuongDan_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(517, 291);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // formChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -232,6 +244,7 @@
             this.Text = "Chương trình quản lý đặt lịch khám";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formChinh_Load);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -256,5 +269,6 @@
         private System.Windows.Forms.ToolStripButton tsThoat;
         private System.Windows.Forms.ToolStripButton tsQuanLy;
         private System.Windows.Forms.ToolStripMenuItem tsDangXuat;
+        private System.Windows.Forms.Button button1;
     }
 }
