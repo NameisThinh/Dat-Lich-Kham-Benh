@@ -19,10 +19,8 @@ namespace DoAn
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            formChinh fc = new formChinh();
             if (txtTenDangNhap.Text== "" && txtMatKhau.Text== "")
             {
-                fc.loadFormQuanLy();
                 this.Hide();
                 //dn.Visible=false;
                 
