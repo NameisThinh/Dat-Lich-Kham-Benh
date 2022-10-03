@@ -125,5 +125,7 @@ namespace DoAn
             formTraCuu tc = new formTraCuu();
             loadNoiDung(tc);
         }
+
+
     }
 }
