@@ -36,8 +36,7 @@
             this.rdb115 = new System.Windows.Forms.RadioButton();
             this.txtNamsinh = new System.Windows.Forms.TextBox();
             this.txtThongTinThem = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLyDo = new System.Windows.Forms.TextBox();
             this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.rdbNu = new System.Windows.Forms.RadioButton();
@@ -57,8 +56,7 @@
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.txtNamsinh);
             this.groupBox1.Controls.Add(this.txtThongTinThem);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtLyDo);
             this.groupBox1.Controls.Add(this.txtSdt);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.rdbNu);
@@ -85,7 +83,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(958, 247);
+            this.groupBox2.Size = new System.Drawing.Size(923, 247);
             this.groupBox2.TabIndex = 19;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đã khám Tại Bệnh Viện :";
@@ -141,7 +139,7 @@
             this.txtNamsinh.Location = new System.Drawing.Point(28, 342);
             this.txtNamsinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNamsinh.Name = "txtNamsinh";
-            this.txtNamsinh.Size = new System.Drawing.Size(772, 35);
+            this.txtNamsinh.Size = new System.Drawing.Size(417, 35);
             this.txtNamsinh.TabIndex = 16;
             this.txtNamsinh.Text = "Năm sinh";
             this.txtNamsinh.Click += new System.EventHandler(this.txtNamsinh_Click);
@@ -149,35 +147,27 @@
             // txtThongTinThem
             // 
             this.txtThongTinThem.ForeColor = System.Drawing.Color.Silver;
-            this.txtThongTinThem.Location = new System.Drawing.Point(28, 816);
+            this.txtThongTinThem.Location = new System.Drawing.Point(15, 802);
             this.txtThongTinThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtThongTinThem.Multiline = true;
             this.txtThongTinThem.Name = "txtThongTinThem";
-            this.txtThongTinThem.Size = new System.Drawing.Size(889, 110);
+            this.txtThongTinThem.Size = new System.Drawing.Size(923, 110);
             this.txtThongTinThem.TabIndex = 11;
             this.txtThongTinThem.Text = "Thông tin thêm ( Nếu có )";
             this.txtThongTinThem.Click += new System.EventHandler(this.txtThongTinThem_Click);
             // 
-            // label5
+            // txtLyDo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(36, 658);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 29);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Lí do khám :";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(28, 688);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(895, 104);
-            this.textBox3.TabIndex = 6;
+            this.txtLyDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLyDo.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.txtLyDo.Location = new System.Drawing.Point(15, 676);
+            this.txtLyDo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtLyDo.Multiline = true;
+            this.txtLyDo.Name = "txtLyDo";
+            this.txtLyDo.Size = new System.Drawing.Size(923, 104);
+            this.txtLyDo.TabIndex = 6;
+            this.txtLyDo.Text = "Lý do đăng ký khám bệnh.";
+            this.txtLyDo.Click += new System.EventHandler(this.txtLyDo_Click);
             // 
             // txtSdt
             // 
@@ -187,7 +177,7 @@
             this.txtSdt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSdt.Multiline = true;
             this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(772, 46);
+            this.txtSdt.Size = new System.Drawing.Size(417, 46);
             this.txtSdt.TabIndex = 5;
             this.txtSdt.Text = "Số điện thoại";
             this.txtSdt.Click += new System.EventHandler(this.txtSdt_Click);
@@ -200,7 +190,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(772, 45);
+            this.txtEmail.Size = new System.Drawing.Size(417, 45);
             this.txtEmail.TabIndex = 4;
             this.txtEmail.Text = "Email(*)";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
@@ -239,7 +229,7 @@
             this.txthoten.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txthoten.Multiline = true;
             this.txthoten.Name = "txthoten";
-            this.txthoten.Size = new System.Drawing.Size(740, 42);
+            this.txthoten.Size = new System.Drawing.Size(417, 42);
             this.txthoten.TabIndex = 0;
             this.txthoten.Text = "Họ và tên bệnh nhân (*)";
             this.txthoten.Click += new System.EventHandler(this.txthoten_Click);
@@ -277,14 +267,13 @@
 
         #endregion
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtLyDo;
         private System.Windows.Forms.TextBox txtSdt;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.RadioButton rdbNu;
         private System.Windows.Forms.RadioButton rdbNam;
         private System.Windows.Forms.TextBox txthoten;
         private System.Windows.Forms.TextBox txtThongTinThem;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtKhac;
         private System.Windows.Forms.TextBox txtNamsinh;
         private System.Windows.Forms.RadioButton rdbkhac;

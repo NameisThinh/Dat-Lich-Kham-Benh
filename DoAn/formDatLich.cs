@@ -56,5 +56,10 @@ namespace DoAn
         {
             txtThongTinThem.Text = "";
         }
+
+        private void txtLyDo_Click(object sender, EventArgs e)
+        {
+            txtLyDo.Text = "";
+        }
     }
 }

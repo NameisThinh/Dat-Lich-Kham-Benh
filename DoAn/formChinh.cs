@@ -17,7 +17,7 @@ namespace DoAn
             InitializeComponent();
         }
 
-        public void loadFormNoiDung(Form formNoiDung )
+        public void loadNoiDung(Form formNoiDung )
         {
             
             formNoiDung.FormBorderStyle = FormBorderStyle.None;
@@ -28,25 +28,16 @@ namespace DoAn
             formNoiDung.Show();
             
         }
-        public void loadFormQuanLy()
-        {
-            tsTraCuu.Visible = true;
-            tsQuanLy.Visible = true;
-            lbThongTin.Text = tsQuanLy.Text.ToUpper();
-
-
-
-        }
 
         private void formChinh_Load(object sender, EventArgs e)
         {
-            tsTraCuu.Visible = false;
+            tsThongKe.Visible = false;
             tsQuanLy.Visible = false;
             tsDangXuat.Enabled = false;
             panel3.Controls.Clear();
             lbThongTin.Text = tsGioiThieu.Text.ToUpper();
             formGioiThieu gt = new formGioiThieu();
-            loadFormNoiDung(gt);
+            loadNoiDung(gt);
             toolStrip1.Site = panel2.Site;
         }
 
@@ -55,12 +46,16 @@ namespace DoAn
             lbThongTin.Text = tsDatLich.Text.ToUpper();
             panel3.Controls.Clear();
             formDatLich dl = new formDatLich();
-            loadFormNoiDung(dl);
+            loadNoiDung(dl);
         }
 
         private void tsThoat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           DialogResult dr =  MessageBox.Show("Xác Nhận Thoát?", "Đóng Chương Trình", MessageBoxButtons.YesNo);
+            if(dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void tsHuongDan_Click(object sender, EventArgs e)
@@ -68,70 +63,67 @@ namespace DoAn
             lbThongTin.Text = tsHuongDan.Text.ToUpper();
             panel3.Controls.Clear();
             formHuongDan hd = new formHuongDan();
-            loadFormNoiDung(hd);
+            loadNoiDung(hd);
 
         }
 
-        private void tsTraCuu_Click(object sender, EventArgs e)
-        {
-            lbThongTin.Text = tsTraCuu.Text.ToUpper();
-            panel3.Controls.Clear();
-            formTraCuu tc = new formTraCuu();
-            loadFormNoiDung(tc);
-
-        }
+  
 
         private void tsGioiThieu_Click(object sender, EventArgs e)
         {
             lbThongTin.Text = tsGioiThieu.Text.ToUpper();
             panel3.Controls.Clear();
             formGioiThieu gt = new formGioiThieu();
-            loadFormNoiDung(gt);
+            loadNoiDung(gt);
 
         }
 
-        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formDangNhap dn = new formDangNhap();
-            dn.ShowDialog();
-            loadFormQuanLy();
-            if (tsQuanLy.Visible == true)
-            {
-                tsDangNhap.Enabled = false;
-                tsDangXuat.Enabled = true;
-                panel3.Controls.Clear();
-                formQuanLy ql = new formQuanLy();
-                loadFormNoiDung(ql);
-
-            }
-           
-        }
-
-        private void btnHenDatLich_Click(object sender, EventArgs e)
-        {
-            panel3.Controls.Clear();
-            formBtnDatLich dl = new formBtnDatLich();
-            loadFormNoiDung(dl);
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void tsQuanLy_Click(object sender, EventArgs e)
         {
             lbThongTin.Text = tsQuanLy.Text.ToUpper();
             panel3.Controls.Clear();
             formQuanLy ql = new formQuanLy();
-            loadFormNoiDung(ql);
+            loadNoiDung(ql);
         }
+        private void tsDangNhap_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn là quan trị viên?", "Xác nhận quyền quản trị viên", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                formDangNhap dn = new formDangNhap();               
+                dn.ShowDialog();
+                if (dn.check == false)
+                {
+                    tsThongKe.Visible = true;
+                    tsQuanLy.Visible = true;
+                    tsDatLich.Visible = false;
+                    tsHuongDan.Visible = false;
+                    tsDangNhap.Enabled = false;
+                    tsDangXuat.Enabled = true;
+                    panel3.Controls.Clear();
+                    formQuanLy ql = new formQuanLy();
+                    loadNoiDung(ql);
+                    lbThongTin.Text = tsQuanLy.Text.ToUpper();
+                }
+            
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+            }
+        }
+        private void tsDangXuat_Click(object sender, EventArgs e)
         {
             formChinh_Load(sender, e);
+            tsDatLich.Visible = true;
+            tsHuongDan.Visible = true;
             tsDangNhap.Enabled = true;
+        }
 
+        private void tsThongKe_Click(object sender, EventArgs e)
+        {
+            lbThongTin.Text = tsThongKe.Text.ToUpper();
+            panel3.Controls.Clear();
+            formTraCuu tc = new formTraCuu();
+            loadNoiDung(tc);
         }
     }
 }

@@ -40,9 +40,9 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsGioiThieu = new System.Windows.Forms.ToolStripButton();
             this.tsDatLich = new System.Windows.Forms.ToolStripButton();
-            this.tsTraCuu = new System.Windows.Forms.ToolStripButton();
-            this.tsThoat = new System.Windows.Forms.ToolStripButton();
             this.tsQuanLy = new System.Windows.Forms.ToolStripButton();
+            this.tsThoat = new System.Windows.Forms.ToolStripButton();
+            this.tsThongKe = new System.Windows.Forms.ToolStripButton();
             this.tsHuongDan = new System.Windows.Forms.ToolStripButton();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -68,7 +68,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1136, 816);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel2
             // 
@@ -84,11 +83,11 @@
             // 
             // lbThongTin
             // 
-            this.lbThongTin.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbThongTin.AutoSize = true;
+            this.lbThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lbThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.lbThongTin.Location = new System.Drawing.Point(531, 60);
+            this.lbThongTin.Location = new System.Drawing.Point(0, 55);
             this.lbThongTin.Name = "lbThongTin";
             this.lbThongTin.Size = new System.Drawing.Size(0, 51);
             this.lbThongTin.TabIndex = 1;
@@ -103,9 +102,9 @@
             this.tsHeThong,
             this.tsGioiThieu,
             this.tsDatLich,
-            this.tsTraCuu,
-            this.tsThoat,
             this.tsQuanLy,
+            this.tsThoat,
+            this.tsThongKe,
             this.tsHuongDan});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -130,24 +129,24 @@
             // 
             this.tsDangNhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsDangNhap.Name = "tsDangNhap";
-            this.tsDangNhap.Size = new System.Drawing.Size(359, 54);
+            this.tsDangNhap.Size = new System.Drawing.Size(355, 54);
             this.tsDangNhap.Text = "Đăng nhập";
-            this.tsDangNhap.Click += new System.EventHandler(this.đăngNhậpToolStripMenuItem_Click);
+            this.tsDangNhap.Click += new System.EventHandler(this.tsDangNhap_Click);
             // 
             // tsDangXuat
             // 
             this.tsDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsDangXuat.Name = "tsDangXuat";
-            this.tsDangXuat.Size = new System.Drawing.Size(359, 54);
+            this.tsDangXuat.Size = new System.Drawing.Size(355, 54);
             this.tsDangXuat.Text = "Đăng xuất";
-            this.tsDangXuat.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            this.tsDangXuat.Click += new System.EventHandler(this.tsDangXuat_Click);
             // 
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(359, 54);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(355, 54);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.tsThoat_Click);
             // 
@@ -173,16 +172,16 @@
             this.tsDatLich.Text = "Đặt lịch";
             this.tsDatLich.Click += new System.EventHandler(this.tsDatLich_Click);
             // 
-            // tsTraCuu
+            // tsQuanLy
             // 
-            this.tsTraCuu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsTraCuu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tsTraCuu.Image = ((System.Drawing.Image)(resources.GetObject("tsTraCuu.Image")));
-            this.tsTraCuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsTraCuu.Name = "tsTraCuu";
-            this.tsTraCuu.Size = new System.Drawing.Size(135, 49);
-            this.tsTraCuu.Text = "Tra cứu";
-            this.tsTraCuu.Click += new System.EventHandler(this.tsTraCuu_Click);
+            this.tsQuanLy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsQuanLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tsQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("tsQuanLy.Image")));
+            this.tsQuanLy.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsQuanLy.Name = "tsQuanLy";
+            this.tsQuanLy.Size = new System.Drawing.Size(138, 49);
+            this.tsQuanLy.Text = "Quản lý";
+            this.tsQuanLy.Click += new System.EventHandler(this.tsQuanLy_Click);
             // 
             // tsThoat
             // 
@@ -197,16 +196,16 @@
             this.tsThoat.Text = "Thoát";
             this.tsThoat.Click += new System.EventHandler(this.tsThoat_Click);
             // 
-            // tsQuanLy
+            // tsThongKe
             // 
-            this.tsQuanLy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsQuanLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.tsQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("tsQuanLy.Image")));
-            this.tsQuanLy.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsQuanLy.Name = "tsQuanLy";
-            this.tsQuanLy.Size = new System.Drawing.Size(138, 49);
-            this.tsQuanLy.Text = "Quản lý";
-            this.tsQuanLy.Click += new System.EventHandler(this.tsQuanLy_Click);
+            this.tsThongKe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.tsThongKe.Image = ((System.Drawing.Image)(resources.GetObject("tsThongKe.Image")));
+            this.tsThongKe.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsThongKe.Name = "tsThongKe";
+            this.tsThongKe.Size = new System.Drawing.Size(165, 49);
+            this.tsThongKe.Text = "Thống kê";
+            this.tsThongKe.Click += new System.EventHandler(this.tsThongKe_Click);
             // 
             // tsHuongDan
             // 
@@ -248,7 +247,7 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton tsGioiThieu;
         private System.Windows.Forms.ToolStripButton tsDatLich;
-        private System.Windows.Forms.ToolStripButton tsTraCuu;
+        private System.Windows.Forms.ToolStripButton tsThongKe;
         private System.Windows.Forms.ToolStripButton tsHuongDan;
         private System.Windows.Forms.Label lbThongTin;
         private System.Windows.Forms.ToolStripDropDownButton tsHeThong;
