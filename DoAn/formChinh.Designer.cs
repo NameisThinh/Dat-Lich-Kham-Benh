@@ -55,7 +55,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 930);
+            this.panel1.Size = new System.Drawing.Size(599, 930);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -65,9 +65,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.Location = new System.Drawing.Point(442, 114);
+            this.panel3.Location = new System.Drawing.Point(599, 114);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1136, 816);
+            this.panel3.Size = new System.Drawing.Size(979, 816);
             this.panel3.TabIndex = 2;
             // 
             // panel2
@@ -77,9 +77,9 @@
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel2.Controls.Add(this.lbThongTin);
             this.panel2.Controls.Add(this.toolStrip1);
-            this.panel2.Location = new System.Drawing.Point(442, 0);
+            this.panel2.Location = new System.Drawing.Point(599, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1136, 114);
+            this.panel2.Size = new System.Drawing.Size(979, 114);
             this.panel2.TabIndex = 1;
             // 
             // lbThongTin
@@ -111,7 +111,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1136, 55);
+            this.toolStrip1.Size = new System.Drawing.Size(979, 55);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 

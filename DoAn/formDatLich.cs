@@ -121,5 +121,7 @@ namespace DoAn
             dtpThoiGian.Format = DateTimePickerFormat.Custom;
             dtpThoiGian.CustomFormat = "MMMM/dd/yyyy/dddd";
         }
+
+
     }
 }
