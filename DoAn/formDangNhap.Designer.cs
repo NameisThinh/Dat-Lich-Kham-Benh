@@ -80,6 +80,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(238, 170);
             this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(308, 53);
             this.txtMatKhau.TabIndex = 2;
             // 
