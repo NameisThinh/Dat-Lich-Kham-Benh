@@ -55,5 +55,10 @@ namespace DoAn
         {
             
         }
+
+        private void txtTimKiem_Click(object sender, EventArgs e)
+        {
+            grbTraCuu.Visible = true;
+        }
     }
 }

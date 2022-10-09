@@ -40,8 +40,6 @@
             this.txtTimKiem = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.dgvthongTin = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.grbTraCuu = new System.Windows.Forms.GroupBox();
             this.SoPhieu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@
             this.NgayDat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThongTin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.grbTraCuu = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.grbChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvthongTin)).BeginInit();
@@ -156,6 +156,7 @@
             this.txtTimKiem.TabIndex = 4;
             this.txtTimKiem.Text = "Tìm kiếm";
             this.txtTimKiem.UseVisualStyleBackColor = true;
+            this.txtTimKiem.Click += new System.EventHandler(this.txtTimKiem_Click);
             // 
             // btnCapNhat
             // 
@@ -182,7 +183,6 @@
             this.NgayDat,
             this.ThongTin,
             this.TinhTrang});
-            this.dgvthongTin.Enabled = false;
             this.dgvthongTin.Location = new System.Drawing.Point(586, 23);
             this.dgvthongTin.Name = "dgvthongTin";
             this.dgvthongTin.RowHeadersVisible = false;
@@ -190,31 +190,6 @@
             this.dgvthongTin.RowTemplate.Height = 33;
             this.dgvthongTin.Size = new System.Drawing.Size(1485, 1018);
             this.dgvthongTin.TabIndex = 8;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.grbTraCuu);
-            this.panel1.Controls.Add(this.dgvthongTin);
-            this.panel1.Controls.Add(this.grbChucNang);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2083, 1114);
-            this.panel1.TabIndex = 9;
-            // 
-            // grbTraCuu
-            // 
-            this.grbTraCuu.Controls.Add(this.label1);
-            this.grbTraCuu.Controls.Add(this.btnTraCuu);
-            this.grbTraCuu.Controls.Add(this.groupBox1);
-            this.grbTraCuu.Controls.Add(this.dtpThoiGian);
-            this.grbTraCuu.Location = new System.Drawing.Point(4, 604);
-            this.grbTraCuu.Name = "grbTraCuu";
-            this.grbTraCuu.Size = new System.Drawing.Size(567, 437);
-            this.grbTraCuu.TabIndex = 9;
-            this.grbTraCuu.TabStop = false;
-            this.grbTraCuu.Text = "Tra cứu";
-            this.grbTraCuu.Visible = false;
             // 
             // SoPhieu
             // 
@@ -273,6 +248,31 @@
             this.TinhTrang.Name = "TinhTrang";
             this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.grbTraCuu);
+            this.panel1.Controls.Add(this.dgvthongTin);
+            this.panel1.Controls.Add(this.grbChucNang);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(2083, 1114);
+            this.panel1.TabIndex = 9;
+            // 
+            // grbTraCuu
+            // 
+            this.grbTraCuu.Controls.Add(this.label1);
+            this.grbTraCuu.Controls.Add(this.btnTraCuu);
+            this.grbTraCuu.Controls.Add(this.groupBox1);
+            this.grbTraCuu.Controls.Add(this.dtpThoiGian);
+            this.grbTraCuu.Location = new System.Drawing.Point(4, 604);
+            this.grbTraCuu.Name = "grbTraCuu";
+            this.grbTraCuu.Size = new System.Drawing.Size(567, 437);
+            this.grbTraCuu.TabIndex = 9;
+            this.grbTraCuu.TabStop = false;
+            this.grbTraCuu.Text = "Tra cứu";
+            this.grbTraCuu.Visible = false;
             // 
             // formQuanLy
             // 
