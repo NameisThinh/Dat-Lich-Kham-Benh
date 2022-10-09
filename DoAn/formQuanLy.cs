@@ -44,11 +44,20 @@ namespace DoAn
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            Email email = new Email();
-            //tạo list lưu email vào 
-            // dung for  duyệt list và gửi nội dung
-            email.Send("phuchieu20.01@gmail.com", "Gửi Demo", "Xin chào, đây là email demo");
-            //
+            try
+            {
+                Email email = new Email();
+                //tạo list lưu email vào 
+                // dung for  duyệt list và gửi nội dung
+                email.Send("phuchieu20.01@gmail.com", "Gửi Demo", "Xin chào, đây là email demo");
+                //
+            }
+            catch
+            {
+                MessageBox.Show("Gửi mail thất bại...!");
+            }
+
+
         }
 
         private void formQuanLy_Load(object sender, EventArgs e)
