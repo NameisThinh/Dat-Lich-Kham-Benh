@@ -10,13 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-
+using DoAn.Model;
 
 namespace DoAn
 {
      
     public partial class formQuanLy : Form
     {
+        Model2 db = new Model2();
         public formQuanLy()
         {
             InitializeComponent();
@@ -64,10 +65,51 @@ namespace DoAn
         {
             
         }
+        public void list(List<BENHNHAN> listBenhNhan)
+        {
+            dgvthongTin.Rows.Clear(); 
 
+            foreach (var item in listBenhNhan)
+            {
+                int index = dgvthongTin.Rows.Add();
+                dgvthongTin.Rows[index].Cells[0].Value = (dgvthongTin.Rows.Count +1).ToString();
+                dgvthongTin.Rows[index].Cells[1].Value = item.TENBN;
+                dgvthongTin.Rows[index].Cells[2].Value =item.GIOITINH;       
+                dgvthongTin.Rows[index].Cells[3].Value = item.SDT;
+                dgvthongTin.Rows[index].Cells[4].Value = item.Email;
+                dgvthongTin.Rows[index].Cells[5].Value = item.NGAYDAT;
+                dgvthongTin.Rows[index].Cells[6].Value = item.GHICHU;
+
+            }
+        }
         private void txtTimKiem_Click(object sender, EventArgs e)
         {
             grbTraCuu.Visible = true;
+           
+     
+        }
+
+        private void dgvthongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTraCuu_Click(object sender, EventArgs e)
+        {
+            if(rdbDaXacNhan.Checked == true)
+            {
+                dgvthongTin.Rows.
+            }
+            if(rdbChuaXacNhan.Checked == true)
+            {
+
+            }
+
         }
     }
 }

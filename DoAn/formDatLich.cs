@@ -1,24 +1,35 @@
-﻿using System;
+﻿using DoAn.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace DoAn
 {
+    
     public partial class formDatLich : Form
     {
+        //private formQuanLy form1;
+
+        Model2 db = new Model2();
         public formDatLich()
         {
             InitializeComponent();
             txtKhac.Visible = false;
+            groupBox3.Visible = false;
+            List<BACSI> listBS = db.BACSIs.ToList();
+            comboboxBacSi(listBS);
             
+
         }
         private void rdbkhac_CheckedChanged(object sender, EventArgs e)
         {
@@ -65,6 +76,24 @@ namespace DoAn
             txtLyDo.ForeColor = Color.Black;
         }
 
+        private void themthongtin(List<BENHNHAN> thongtinbenhnhan)
+        {
+            
+            
+        }
+        private void comboboxBacSi(List<BACSI> listBS)
+        {
+            this.cbbBacSi.DataSource = listBS;
+            this.cbbBacSi.DisplayMember ="TenBS";
+            this.cbbBacSi.ValueMember = "MaBS";
+        
+            
+        }
+        public void getData(string data)
+        {
+                
+        }
+         
         private void btnDatLich_Click(object sender, EventArgs e)
         {
             try
@@ -91,10 +120,10 @@ namespace DoAn
                         rdbNam.ForeColor= Color.Red;
                         rdbNu.ForeColor= Color.Red;
                     }
-                    if (txthoten.Text == "")
+                    if (txtSdt.Text == "")
                     {
-                        txtEmail.Text = "Nhập họ tên";
-                        txtEmail.ForeColor = Color.Red;
+                        txtSdt.Text = "Nhập họ tên";
+                        txtSdt.ForeColor = Color.Red;
                     }
                 }
             }
@@ -102,6 +131,35 @@ namespace DoAn
             {
                 MessageBox.Show("Thông tin không hợp lệ!");
             }
+            BENHNHAN bn = new BENHNHAN();
+
+            bn.TENBN = txthoten.Text;
+            bn.GIOITINH = rdbNam;
+            bn.Email = txtEmail.Text;
+            bn.SDT = txtSdt.Text;
+            bn.NAMSINH = int.Parse(txtNamsinh.Text);
+            bn.NGAYDAT = DateTime.UtcNow;
+            bn.GHICHU = txtLyDo.Text;
+               
+            db.BENHNHANs.Add(bn);
+              
+
+           // Image a = Image.FromFile(@"C:\\Users\\MSIs\\source\\repos\\DoAn\\DoAn\\Image\\" + pictureBacSi.Name + ".jpg");
+            //pictureBacSi.Image = Image.FromFile(@"C:\\Users\\MSIs\\source\\repos\\DoAn\\DoAn\\Image\\1.jpg");
+            List<BACSI> listBS = db.BACSIs.ToList();
+     
+                foreach (var item1 in listBS)
+                  {
+                      if(item1.TENBS.Contains(cbbBacSi.Text)==true)                   
+                      {
+                               //  pictureBacSi.Image = a;
+                                txtHoTenBS.Text = item1.TENBS;
+                                txtHocHam.Text = item1.HOCHAM;
+                      }
+                  }
+
+            groupBox3.Visible = true;
+
         }
 
         private void rdbNam_CheckedChanged(object sender, EventArgs e)
@@ -122,6 +180,24 @@ namespace DoAn
             dtpThoiGian.CustomFormat = "MMMM/dd/yyyy/dddd";
         }
 
+        private void groupBoxBacSi_Enter(object sender, EventArgs e)
+        {
+          
+        }
+        /// GROUPBOX hiển thị bác sĩ
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+            
+        }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
