@@ -9,29 +9,35 @@ namespace DoAn.Model
     [Table("BENHNHAN")]
     public partial class BENHNHAN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public BENHNHAN()
+        {
+            PHIEUDATLICHes = new HashSet<PHIEUDATLICH>();
+        }
+
         [Key]
-        [StringLength(20)]
-        public string MABN { get; set; }
+        public int MABN { get; set; }
 
-        [StringLength(100)]
+        [Required]
+        [StringLength(200)]
         public string TENBN { get; set; }
-
-        [StringLength(10)]
-        public string GIOITINH { get; set; }
 
         public int? NAMSINH { get; set; }
 
+        public bool? GIOITINH { get; set; }
+
+        [Required]
+        [StringLength(200)]
+        public string EMAIL { get; set; }
+
+        [Required]
         [StringLength(20)]
         public string SDT { get; set; }
 
-        [StringLength(50)]
-        public string Email { get; set; }
-
-        [StringLength(150)]
+        [StringLength(200)]
         public string DIACHI { get; set; }
 
-        public string GHICHU { get; set; }
-
-        public DateTime? NGAYDAT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHIEUDATLICH> PHIEUDATLICHes { get; set; }
     }
 }

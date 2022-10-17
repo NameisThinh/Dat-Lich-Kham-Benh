@@ -13,28 +13,21 @@ namespace DoAn.Model
         public KHOA()
         {
             BACSIs = new HashSet<BACSI>();
-            NHANVIENs = new HashSet<NHANVIEN>();
         }
 
         [Key]
         [StringLength(20)]
         public string MAKHOA { get; set; }
 
-        [StringLength(100)]
+        [StringLength(200)]
         public string TENKHOA { get; set; }
 
-        [StringLength(100)]
+        [StringLength(200)]
         public string CHUYENMON { get; set; }
 
-        public int? SL { get; set; }
-
-        [StringLength(200)]
-        public string GHICHU { get; set; }
+        public int? SLBACSI { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BACSI> BACSIs { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
     }
 }

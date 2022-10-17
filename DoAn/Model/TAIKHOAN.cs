@@ -6,30 +6,26 @@ namespace DoAn.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PHIEUDATLICH")]
-    public partial class PHIEUDATLICH
+    [Table("TAIKHOAN")]
+    public partial class TAIKHOAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PHIEUDATLICH()
+        public TAIKHOAN()
         {
-            CTPHIEUDATLICHes = new HashSet<CTPHIEUDATLICH>();
+            NHANVIENs = new HashSet<NHANVIEN>();
         }
 
         [Key]
-        public int MAPHIEUDL { get; set; }
-
-        public DateTime? NGAYLAPPHIEU { get; set; }
-
         [StringLength(20)]
-        public string MANV { get; set; }
+        public string MATK { get; set; }
 
-        public int? MABN { get; set; }
+        [StringLength(100)]
+        public string TENDANGNHAP { get; set; }
 
-        public virtual BENHNHAN BENHNHAN { get; set; }
+        [StringLength(100)]
+        public string MATKHAU { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTPHIEUDATLICH> CTPHIEUDATLICHes { get; set; }
-
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
     }
 }

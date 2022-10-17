@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -20,16 +21,17 @@ namespace DoAn
     {
         //private formQuanLy form1;
 
-        Model2 db = new Model2();
+        Model1 db = new Model1();
         public formDatLich()
         {
             InitializeComponent();
+        }
+        private void formDatLich_Load(object sender, EventArgs e)
+        {
             txtKhac.Visible = false;
-            groupBox3.Visible = false;
-            List<BACSI> listBS = db.BACSIs.ToList();
-            comboboxBacSi(listBS);
-            
-
+            List<BACSI> listKhoa = db.BACSIs.ToList();
+            comboboxKhoa(listKhoa);
+            cbbBacSi.SelectedIndex = -1;
         }
         private void rdbkhac_CheckedChanged(object sender, EventArgs e)
         {
@@ -62,13 +64,13 @@ namespace DoAn
             txtSdt.ForeColor = Color.Black;
         }
 
-        private void txtNamsinh_Click(object sender, EventArgs e)
+
+        private void txtNamsinh_Click_1(object sender, EventArgs e)
         {
             txtNamsinh.Text = "";
             txtNamsinh.ForeColor = Color.Black;
         }
 
-       
 
         private void txtLyDo_Click(object sender, EventArgs e)
         {
@@ -76,16 +78,11 @@ namespace DoAn
             txtLyDo.ForeColor = Color.Black;
         }
 
-        private void themthongtin(List<BENHNHAN> thongtinbenhnhan)
+        private void comboboxKhoa(List<BACSI> listKhoa)
         {
-            
-            
-        }
-        private void comboboxBacSi(List<BACSI> listBS)
-        {
-            this.cbbBacSi.DataSource = listBS;
-            this.cbbBacSi.DisplayMember ="TenBS";
-            this.cbbBacSi.ValueMember = "MaBS";
+            this.cbbBacSi.DataSource = listKhoa;
+            this.cbbBacSi.DisplayMember ="TENBS";
+            this.cbbBacSi.ValueMember = "MABS";
         
             
         }
@@ -98,8 +95,34 @@ namespace DoAn
         {
             try
             {
+                NHANVIEN nv = new NHANVIEN();
                 if(txthoten.Text!=""&& txtEmail.Text != "" && txtSdt.Text != "")
                 {
+                    BENHNHAN bn = new BENHNHAN()
+                    {
+                        TENBN = txthoten.Text,
+                        NAMSINH = int.Parse(txtNamsinh.Text),
+                        GIOITINH = rdbNam.Checked ? true : false,
+                        EMAIL = txtEmail.Text,
+                        SDT = txtSdt.Text,  
+                    };
+                    PHIEUDATLICH pdl = new PHIEUDATLICH() 
+                    { 
+                        NGAYLAPPHIEU = dtpThoiGian.Value,
+                        MABN = bn.MABN,
+                    };
+                    CTPHIEUDATLICH ct = new CTPHIEUDATLICH()
+                    {
+                        MAPHIEUDL = pdl.MAPHIEUDL,
+                        MABS = cbbBacSi.SelectedValue.ToString(),
+                        DAKHAMTAI = rdb115.Checked? rdb115.Text:(rdbNhidong.Checked? rdbNhidong.Text:txtKhac.Text),
+                        LYDO = txtLyDo.Text,
+                        TINHTRANG = false,
+                    };
+                    db.BENHNHANs.Add(bn);
+                    db.PHIEUDATLICHes.Add(pdl);
+                    db.CTPHIEUDATLICHes.Add(ct);
+                    db.SaveChanges();
                     MessageBox.Show("Đăng ký thành công!. Đợi kết quả đăng ký tại Email");
                 }
                 else
@@ -122,7 +145,7 @@ namespace DoAn
                     }
                     if (txtSdt.Text == "")
                     {
-                        txtSdt.Text = "Nhập họ tên";
+                        txtSdt.Text = "Nhập SDT";
                         txtSdt.ForeColor = Color.Red;
                     }
                 }
@@ -131,17 +154,7 @@ namespace DoAn
             {
                 MessageBox.Show("Thông tin không hợp lệ!");
             }
-            BENHNHAN bn = new BENHNHAN();
-
-            bn.TENBN = txthoten.Text;
-            bn.GIOITINH = rdbNam;
-            bn.Email = txtEmail.Text;
-            bn.SDT = txtSdt.Text;
-            bn.NAMSINH = int.Parse(txtNamsinh.Text);
-            bn.NGAYDAT = DateTime.UtcNow;
-            bn.GHICHU = txtLyDo.Text;
-               
-            db.BENHNHANs.Add(bn);
+            
               
 
            // Image a = Image.FromFile(@"C:\\Users\\MSIs\\source\\repos\\DoAn\\DoAn\\Image\\" + pictureBacSi.Name + ".jpg");
@@ -157,8 +170,7 @@ namespace DoAn
                                 txtHocHam.Text = item1.HOCHAM;
                       }
                   }
-
-            groupBox3.Visible = true;
+  
 
         }
 
@@ -174,30 +186,22 @@ namespace DoAn
             rdbNu.ForeColor = Color.Black;
         }
 
-        private void formDatLich_Load(object sender, EventArgs e)
+
+
+
+
+
+        private void cbbBacSi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtpThoiGian.Format = DateTimePickerFormat.Custom;
-            dtpThoiGian.CustomFormat = "MMMM/dd/yyyy/dddd";
+            string s = cbbBacSi.GetItemText(cbbBacSi.SelectedValue);
+            BACSI bs = db.BACSIs.FirstOrDefault(p => p.MABS == s);
+            if (bs != null)
+            {
+                txtHoTenBS.Text = bs.TENBS;
+                txtHocHam.Text = bs.HOCHAM;
+            }
         }
 
-        private void groupBoxBacSi_Enter(object sender, EventArgs e)
-        {
-          
-        }
-        /// GROUPBOX hiển thị bác sĩ
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-            
-        }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

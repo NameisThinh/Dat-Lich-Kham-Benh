@@ -11,18 +11,55 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using DoAn.Model;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Header;
+using static DoAn.formQuanLy;
 
 namespace DoAn
 {
-     
+
     public partial class formQuanLy : Form
     {
-        Model2 db = new Model2();
+        Model1 db = new Model1();
         public formQuanLy()
         {
             InitializeComponent();
         }
+        private void formQuanLy_Load(object sender, EventArgs e)
+        {
+            List<CTPHIEUDATLICH> ct = db.CTPHIEUDATLICHes.ToList();
+            list(ct,false);
+            grbTraCuu.Visible = false;
+        }
+        public void list(List<CTPHIEUDATLICH> listCTphieudatlich,bool check)
+        {
+            dgvthongTin.Rows.Clear();
 
+            foreach (var item in listCTphieudatlich)
+            {
+                if (item.TINHTRANG == check)
+                {
+                    int index = dgvthongTin.Rows.Add();
+                    dgvthongTin.Rows[index].Cells[0].Value = item.PHIEUDATLICH.MAPHIEUDL;
+                    dgvthongTin.Rows[index].Cells[1].Value = item.PHIEUDATLICH.BENHNHAN.TENBN;
+                    if (item.PHIEUDATLICH.BENHNHAN.GIOITINH == true)
+                    {
+                        dgvthongTin.Rows[index].Cells[2].Value = "NAM";
+                    }
+                    else
+                    {
+                        dgvthongTin.Rows[index].Cells[2].Value = "NỮ";
+                    }
+
+                    dgvthongTin.Rows[index].Cells[3].Value = item.PHIEUDATLICH.BENHNHAN.SDT;
+                    dgvthongTin.Rows[index].Cells[4].Value = item.PHIEUDATLICH.BENHNHAN.EMAIL;
+                    dgvthongTin.Rows[index].Cells[5].Value = item.PHIEUDATLICH.NGAYLAPPHIEU;
+                    dgvthongTin.Rows[index].Cells[6].Value = item.LYDO;
+                    dgvthongTin.Rows[index].Cells[7].Value = item.TINHTRANG;
+                }
+
+
+            }
+        }
         public class Email
         {
             public static string Address = "phuchieu1213@gmail.com"; //Địa chỉ email của bạn
@@ -45,71 +82,139 @@ namespace DoAn
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            Email email = new Email();
+            //BENHNHAN bn = new BENHNHAN();
+            List<BENHNHAN> listbn = new List<BENHNHAN>();
+            bool check;
+            int kt = 0;
+            listbn.Clear();
             try
             {
-                Email email = new Email();
-                //tạo list lưu email vào 
-                // dung for  duyệt list và gửi nội dung
-                email.Send("phuchieu20.01@gmail.com", "Gửi Demo", "Xin chào, đây là email demo");
+
+                for (int i = 0; i < dgvthongTin.RowCount - 1; i++)
+                {
+                    DataGridViewRow row = dgvthongTin.Rows[i];
+                    check = bool.Parse(row.Cells[7].Value.ToString());
+                    if (check == true)
+                    {
+                        var mabn = int.Parse(row.Cells[0].Value.ToString());
+                        var bnhan = db.BENHNHANs.FirstOrDefault(p => p.MABN == mabn);
+                        if (bnhan != null)
+                        {
+                            listbn.Add(bnhan);
+                        }
+
+                    }
+                }
+                foreach (var item in listbn)
+                {
+                    var ct = db.CTPHIEUDATLICHes.FirstOrDefault(p => p.PHIEUDATLICH.BENHNHAN.MABN == item.MABN);
+                    if (ct != null)
+                    {
+                        ct.TINHTRANG = true;
+                        db.SaveChanges();
+
+                        email.Send(item.EMAIL, "XÁC NHẬN ĐĂNG KÝ THÀNH CÔNG!", "Xin chào " + item.TENBN + ",\nĐơn đăng ký của bạn đã được duyệt.\nXin cảm ơn.!");
+                        kt++;   
+                    }
+
+                }
+                formQuanLy_Load(sender, e);
+                if (kt == 0)
+                {
+                    MessageBox.Show("Dữ liệu không thay đổi");
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thành công");
+                }
+                
+
                 //
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Gửi mail thất bại...!");
+                MessageBox.Show(ex.Message);
+                //MessageBox.Show("Cập nhật thất bại...!");
             }
 
 
         }
 
-        private void formQuanLy_Load(object sender, EventArgs e)
-        {
-            
-        }
-        public void list(List<BENHNHAN> listBenhNhan)
-        {
-            dgvthongTin.Rows.Clear(); 
 
-            foreach (var item in listBenhNhan)
-            {
-                int index = dgvthongTin.Rows.Add();
-                dgvthongTin.Rows[index].Cells[0].Value = (dgvthongTin.Rows.Count +1).ToString();
-                dgvthongTin.Rows[index].Cells[1].Value = item.TENBN;
-                dgvthongTin.Rows[index].Cells[2].Value =item.GIOITINH;       
-                dgvthongTin.Rows[index].Cells[3].Value = item.SDT;
-                dgvthongTin.Rows[index].Cells[4].Value = item.Email;
-                dgvthongTin.Rows[index].Cells[5].Value = item.NGAYDAT;
-                dgvthongTin.Rows[index].Cells[6].Value = item.GHICHU;
-
-            }
-        }
-        private void txtTimKiem_Click(object sender, EventArgs e)
-        {
-            grbTraCuu.Visible = true;
-           
-     
-        }
-
-        private void dgvthongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-                
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
-            if(rdbDaXacNhan.Checked == true)
+            //List<PHIEUDATLICH> listpdl = db.PHIEUDATLICHes.Where(p => p.NGAYLAPPHIEU == dtpThoiGian.Value).ToList();
+            List<CTPHIEUDATLICH> ct = db.CTPHIEUDATLICHes.Where(p=> p.PHIEUDATLICH.NGAYLAPPHIEU>=dtpThoiGian1.Value && p.PHIEUDATLICH.NGAYLAPPHIEU <= dtpThoiGian2.Value).ToList();
+            if (rdbDaXacNhan.Checked == true)
             {
-                dgvthongTin.Rows.
+                list(ct, true);
             }
-            if(rdbChuaXacNhan.Checked == true)
+            else
             {
-
+                list(ct, false);
             }
 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn chắc chắn muốn xoá?", "Xác nhận", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                List<BENHNHAN> listbn = new List<BENHNHAN>();
+                bool check;
+                listbn.Clear();
+                try
+                {
+
+                    for (int i = 0; i < dgvthongTin.RowCount - 1; i++)
+                    {
+                        DataGridViewRow row = dgvthongTin.Rows[i];
+                        check = bool.Parse(row.Cells[7].Value.ToString());
+                        if (check == true)
+                        {
+                            var mabn = int.Parse(row.Cells[0].Value.ToString());
+                            var bnhan = db.BENHNHANs.FirstOrDefault(p => p.MABN == mabn);
+                            if (bnhan != null)
+                            {
+                                listbn.Add(bnhan);
+                            }
+
+                        }
+                    }
+                    foreach (var item in listbn)
+                    {
+                        var ct = db.CTPHIEUDATLICHes.FirstOrDefault(p => p.PHIEUDATLICH.BENHNHAN.MABN == item.MABN);
+                        if (ct != null)
+                        {
+                            PHIEUDATLICH pdl = db.PHIEUDATLICHes.FirstOrDefault(p => p.MAPHIEUDL == ct.MAPHIEUDL);
+                            BENHNHAN bn = db.BENHNHANs.FirstOrDefault(p => p.MABN == pdl.MABN);
+                            db.CTPHIEUDATLICHes.Remove(ct);
+                            db.PHIEUDATLICHes.Remove(pdl);
+                            db.BENHNHANs.Remove(bn);
+                            db.SaveChanges();
+                        }
+
+                    }
+                    formQuanLy_Load(sender, e);
+                    MessageBox.Show("Xoá thành công");
+
+                    //
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show("Cập nhật thất bại...!");
+                }
+            }
+        }
+
+        private void txtTimKiem_Click(object sender, EventArgs e)
+        {
+            grbTraCuu.Visible = true;
+            
         }
     }
 }

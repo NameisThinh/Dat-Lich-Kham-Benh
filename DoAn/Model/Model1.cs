@@ -5,21 +5,20 @@ using System.Linq;
 
 namespace DoAn.Model
 {
-    public partial class Model2 : DbContext
+    public partial class Model1 : DbContext
     {
-        public Model2()
-            : base("name=Model2")
+        public Model1()
+            : base("name=Model1")
         {
         }
 
         public virtual DbSet<BACSI> BACSIs { get; set; }
         public virtual DbSet<BENHNHAN> BENHNHANs { get; set; }
-        public virtual DbSet<DangNhap> DangNhaps { get; set; }
+        public virtual DbSet<CTPHIEUDATLICH> CTPHIEUDATLICHes { get; set; }
         public virtual DbSet<KHOA> KHOAs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
-        public virtual DbSet<PHHIEUCHITIETDATLICH> PHHIEUCHITIETDATLICHes { get; set; }
         public virtual DbSet<PHIEUDATLICH> PHIEUDATLICHes { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -36,21 +35,18 @@ namespace DoAn.Model
                 .Property(e => e.MAKHOA)
                 .IsFixedLength();
 
-            modelBuilder.Entity<BENHNHAN>()
-                .Property(e => e.MABN)
-                .IsFixedLength();
+            modelBuilder.Entity<BACSI>()
+                .HasMany(e => e.CTPHIEUDATLICHes)
+                .WithRequired(e => e.BACSI)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<BENHNHAN>()
                 .Property(e => e.SDT)
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<DangNhap>()
-                .Property(e => e.TenDangNhap)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<DangNhap>()
-                .Property(e => e.MatKhau)
+            modelBuilder.Entity<CTPHIEUDATLICH>()
+                .Property(e => e.MABS)
                 .IsFixedLength();
 
             modelBuilder.Entity<KHOA>()
@@ -67,23 +63,7 @@ namespace DoAn.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<NHANVIEN>()
-                .Property(e => e.MAKHOA)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHHIEUCHITIETDATLICH>()
-                .Property(e => e.MAPHIEUCT)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHHIEUCHITIETDATLICH>()
-                .Property(e => e.MAPHIEUDL)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHHIEUCHITIETDATLICH>()
-                .Property(e => e.MABS)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHIEUDATLICH>()
-                .Property(e => e.MAPHIEUDL)
+                .Property(e => e.MATK)
                 .IsFixedLength();
 
             modelBuilder.Entity<PHIEUDATLICH>()
@@ -91,7 +71,20 @@ namespace DoAn.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<PHIEUDATLICH>()
-                .Property(e => e.MABN)
+                .HasMany(e => e.CTPHIEUDATLICHes)
+                .WithRequired(e => e.PHIEUDATLICH)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<TAIKHOAN>()
+                .Property(e => e.MATK)
+                .IsFixedLength();
+
+            modelBuilder.Entity<TAIKHOAN>()
+                .Property(e => e.TENDANGNHAP)
+                .IsFixedLength();
+
+            modelBuilder.Entity<TAIKHOAN>()
+                .Property(e => e.MATKHAU)
                 .IsFixedLength();
         }
     }

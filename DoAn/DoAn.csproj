@@ -100,13 +100,12 @@
     </Compile>
     <Compile Include="Model\BACSI.cs" />
     <Compile Include="Model\BENHNHAN.cs" />
-    <Compile Include="Model\DangNhap.cs" />
+    <Compile Include="Model\CTPHIEUDATLICH.cs" />
     <Compile Include="Model\KHOA.cs" />
-    <Compile Include="Model\Model2.cs" />
+    <Compile Include="Model\Model1.cs" />
     <Compile Include="Model\NHANVIEN.cs" />
-    <Compile Include="Model\PHHIEUCHITIETDATLICH.cs" />
     <Compile Include="Model\PHIEUDATLICH.cs" />
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Model\TAIKHOAN.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formChinh.resx">

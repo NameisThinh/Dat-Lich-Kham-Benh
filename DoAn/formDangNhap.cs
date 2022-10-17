@@ -19,17 +19,19 @@ namespace DoAn
             InitializeComponent();
         }
         public bool check =true;
-        static Model2 context = new Model2();
+        static Model1 context = new Model1();
+        public string matk = "";
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             try
             {
-                User dn = context.Users.First(p => p.taikhoan == txtTenDangNhap.Text && p.matkhau == txtMatKhau.Text);
+               TAIKHOAN dn = context.TAIKHOANs.First(p => p.TENDANGNHAP == txtTenDangNhap.Text && p.MATKHAU == txtMatKhau.Text);
                 if (dn != null)
                 {
                     check = false;
                     this.Hide();
                 }
+                matk = dn.MATK;
             }
             catch
             {
@@ -42,12 +44,13 @@ namespace DoAn
             try
             {
                 
-                List<User> facultyList = context.Users.ToList();
+                List<TAIKHOAN> facultyList = context.TAIKHOANs.ToList();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+        
     }
 }

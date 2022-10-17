@@ -9,27 +9,33 @@ namespace DoAn.Model
     [Table("NHANVIEN")]
     public partial class NHANVIEN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public NHANVIEN()
+        {
+            PHIEUDATLICHes = new HashSet<PHIEUDATLICH>();
+        }
+
         [Key]
         [StringLength(20)]
         public string MANV { get; set; }
 
-        [StringLength(100)]
+        [StringLength(200)]
         public string TENNV { get; set; }
 
         public int? NAMSINH { get; set; }
 
-        [StringLength(150)]
+        [StringLength(200)]
         public string DIACHI { get; set; }
 
         [StringLength(20)]
         public string SDT { get; set; }
 
         [StringLength(20)]
-        public string MAKHOA { get; set; }
+        public string MATK { get; set; }
 
-        [StringLength(200)]
-        public string GHICHU { get; set; }
+        public virtual TAIKHOAN TAIKHOAN { get; set; }
 
-        public virtual KHOA KHOA { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHIEUDATLICH> PHIEUDATLICHes { get; set; }
     }
 }

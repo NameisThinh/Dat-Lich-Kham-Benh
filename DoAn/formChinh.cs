@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoAn.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,8 @@ namespace DoAn
         {
             InitializeComponent();
         }
-
+        Model1 db = new Model1();
+        
         public void loadNoiDung(Form formNoiDung )
         {
             
@@ -40,6 +42,7 @@ namespace DoAn
             formGioiThieu gt = new formGioiThieu();
             loadNoiDung(gt);
             toolStrip1.Site = panel2.Site;
+            lbNhanVien.Visible = false;
         }
 
         private void tsDatLich_Click(object sender, EventArgs e)
@@ -106,6 +109,9 @@ namespace DoAn
                     formQuanLy ql = new formQuanLy();
                     loadNoiDung(ql);
                     lbThongTin.Text = tsQuanLy.Text.ToUpper();
+                    lbNhanVien.Visible = true;
+                    NHANVIEN nv = db.NHANVIENs.FirstOrDefault(p=>p.MATK == dn.matk);
+                    lbNhanVien.Text = nv.TENNV;
                 }
             
 

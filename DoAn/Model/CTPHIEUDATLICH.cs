@@ -6,26 +6,26 @@ namespace DoAn.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PHHIEUCHITIETDATLICH")]
-    public partial class PHHIEUCHITIETDATLICH
+    [Table("CTPHIEUDATLICH")]
+    public partial class CTPHIEUDATLICH
     {
         [Key]
-        [StringLength(20)]
-        public string MAPHIEUCT { get; set; }
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MAPHIEUDL { get; set; }
 
-        [StringLength(20)]
-        public string MAPHIEUDL { get; set; }
-
+        [Key]
+        [Column(Order = 1)]
         [StringLength(20)]
         public string MABS { get; set; }
 
         [StringLength(100)]
-        public string CHIDINHKHAM { get; set; }
-
-        public DateTime? NGAYHENKHAM { get; set; }
+        public string DAKHAMTAI { get; set; }
 
         [StringLength(200)]
-        public string GHICHU { get; set; }
+        public string LYDO { get; set; }
+
+        public bool? TINHTRANG { get; set; }
 
         public virtual BACSI BACSI { get; set; }
 
