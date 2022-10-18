@@ -154,7 +154,24 @@ namespace DoAn
             {
                 MessageBox.Show("Thông tin không hợp lệ!");
             }
+<<<<<<< HEAD
             
+=======
+            BENHNHAN bn = new BENHNHAN();
+
+        /*    bn.TENBN = txthoten.Text;
+            bn.GIOITINH = rdbNam.Checked? "Nam" : "Nữ";
+            bn.Email = txtEmail.Text;
+            bn.SDT = txtSdt.Text;
+            bn.NAMSINH = int.Parse(txtNamsinh.Text);
+            bn.NGAYDAT = DateTime.UtcNow;
+            bn.GHICHU = txtLyDo.Text;
+               
+            db.BENHNHANs.Add(bn); */
+<<<<<<< HEAD
+>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
+=======
+>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
               
 
            // Image a = Image.FromFile(@"C:\\Users\\MSIs\\source\\repos\\DoAn\\DoAn\\Image\\" + pictureBacSi.Name + ".jpg");

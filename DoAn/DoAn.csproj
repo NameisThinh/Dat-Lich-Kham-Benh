@@ -103,6 +103,13 @@
     <Compile Include="Model\CTPHIEUDATLICH.cs" />
     <Compile Include="Model\KHOA.cs" />
     <Compile Include="Model\Model1.cs" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
+    <Compile Include="Model\Model2.cs" />
+>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
     <Compile Include="Model\NHANVIEN.cs" />
     <Compile Include="Model\PHIEUDATLICH.cs" />
     <Compile Include="Model\TAIKHOAN.cs" />
