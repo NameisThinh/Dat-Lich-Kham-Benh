@@ -127,10 +127,7 @@ namespace DoAn
                 else
                 {
                     MessageBox.Show("Cập nhật thành công");
-                }
-                
-
-                //
+                }                
             }
             catch (Exception ex)
             {
@@ -145,7 +142,6 @@ namespace DoAn
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
-            //List<PHIEUDATLICH> listpdl = db.PHIEUDATLICHes.Where(p => p.NGAYLAPPHIEU == dtpThoiGian.Value).ToList();
             List<CTPHIEUDATLICH> ct = db.CTPHIEUDATLICHes.Where(p=> p.PHIEUDATLICH.NGAYLAPPHIEU>=dtpThoiGian1.Value && p.PHIEUDATLICH.NGAYLAPPHIEU <= dtpThoiGian2.Value).ToList();
             if (rdbDaXacNhan.Checked == true)
             {
@@ -200,13 +196,10 @@ namespace DoAn
                     }
                     formQuanLy_Load(sender, e);
                     MessageBox.Show("Xoá thành công");
-
-                    //
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    //MessageBox.Show("Cập nhật thất bại...!");
                 }
             }
         }

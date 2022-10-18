@@ -45,15 +45,18 @@
             this.tsThoat = new System.Windows.Forms.ToolStripButton();
             this.tsThongKe = new System.Windows.Forms.ToolStripButton();
             this.tsHuongDan = new System.Windows.Forms.ToolStripButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(598, 930);
@@ -68,20 +71,20 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel3.Location = new System.Drawing.Point(598, 114);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(980, 816);
+            this.panel3.Size = new System.Drawing.Size(1233, 816);
             this.panel3.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.lbNhanVien);
             this.panel2.Controls.Add(this.lbThongTin);
             this.panel2.Controls.Add(this.toolStrip1);
             this.panel2.Location = new System.Drawing.Point(598, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(980, 114);
+            this.panel2.Size = new System.Drawing.Size(1233, 114);
             this.panel2.TabIndex = 1;
             // 
             // lbNhanVien
@@ -89,7 +92,7 @@
             this.lbNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbNhanVien.AutoSize = true;
             this.lbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNhanVien.Location = new System.Drawing.Point(686, 69);
+            this.lbNhanVien.Location = new System.Drawing.Point(939, 69);
             this.lbNhanVien.Name = "lbNhanVien";
             this.lbNhanVien.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbNhanVien.Size = new System.Drawing.Size(136, 31);
@@ -125,7 +128,7 @@
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(980, 55);
+            this.toolStrip1.Size = new System.Drawing.Size(1233, 55);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -136,8 +139,9 @@
             this.tsDangXuat,
             this.thoátToolStripMenuItem});
             this.tsHeThong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tsHeThong.Image = ((System.Drawing.Image)(resources.GetObject("tsHeThong.Image")));
             this.tsHeThong.Name = "tsHeThong";
-            this.tsHeThong.Size = new System.Drawing.Size(183, 49);
+            this.tsHeThong.Size = new System.Drawing.Size(215, 49);
             this.tsHeThong.Text = "Hệ thống";
             // 
             // tsDangNhap
@@ -234,11 +238,22 @@
             this.tsHuongDan.ToolTipText = "toolStripButton4";
             this.tsHuongDan.Click += new System.EventHandler(this.tsHuongDan_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(598, 930);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // formChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1574, 930);
+            this.ClientSize = new System.Drawing.Size(1827, 930);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -247,10 +262,12 @@
             this.Text = "Chương trình quản lý đặt lịch khám";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formChinh_Load);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,5 +289,6 @@
         private System.Windows.Forms.ToolStripButton tsQuanLy;
         private System.Windows.Forms.ToolStripMenuItem tsDangXuat;
         private System.Windows.Forms.Label lbNhanVien;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
