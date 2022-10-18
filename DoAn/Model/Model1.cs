@@ -7,22 +7,7 @@ namespace DoAn.Model
 {
     public partial class Model1 : DbContext
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
         public Model1()
-========
-        public Model2()
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
-        public Model1()
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-========
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
-        public Model1()
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
             : base("name=Model1")
         {
         }
@@ -61,31 +46,6 @@ namespace DoAn.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<CTPHIEUDATLICH>()
-<<<<<<< HEAD
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-<<<<<<< HEAD
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-========
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-========
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-                .Property(e => e.MAPHIEUDL)
-                .IsFixedLength();
-
-            modelBuilder.Entity<CTPHIEUDATLICH>()
-<<<<<<< HEAD
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-<<<<<<< HEAD
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-========
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
                 .Property(e => e.MABS)
                 .IsFixedLength();
 
@@ -104,28 +64,6 @@ namespace DoAn.Model
 
             modelBuilder.Entity<NHANVIEN>()
                 .Property(e => e.MATK)
-<<<<<<< HEAD
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-<<<<<<< HEAD
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-========
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-========
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHIEUDATLICH>()
-                .Property(e => e.MAPHIEUDL)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79:DoAn/Model/Model2.cs
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
                 .IsFixedLength();
 
             modelBuilder.Entity<PHIEUDATLICH>()

@@ -139,53 +139,13 @@ namespace DoAn
         }
 
 
-<<<<<<< HEAD
-=======
-            foreach (var item in listBenhNhan)
-            {
-                int index = dgvthongTin.Rows.Add();
-                dgvthongTin.Rows[index].Cells[0].Value = (dgvthongTin.Rows.Count +1).ToString();
-                dgvthongTin.Rows[index].Cells[1].Value = item.TENBN;
-                dgvthongTin.Rows[index].Cells[2].Value =item.GIOITINH;       
-                dgvthongTin.Rows[index].Cells[3].Value = item.SDT;
-                dgvthongTin.Rows[index].Cells[4].Value = item.EMAIL;
-             //   dgvthongTin.Rows[index].Cells[5].Value = item.;
-              //  dgvthongTin.Rows[index].Cells[6].Value = item.;
-
-            }
-        }
-        private void txtTimKiem_Click(object sender, EventArgs e)
-        {
-            grbTraCuu.Visible = true;
-           
-     
-        }
-
-        private void dgvthongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-                
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
             List<CTPHIEUDATLICH> ct = db.CTPHIEUDATLICHes.Where(p=> p.PHIEUDATLICH.NGAYLAPPHIEU>=dtpThoiGian1.Value && p.PHIEUDATLICH.NGAYLAPPHIEU <= dtpThoiGian2.Value).ToList();
             if (rdbDaXacNhan.Checked == true)
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
                 list(ct, true);
-=======
-               // dgvthongTin.Rows.
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-=======
-               // dgvthongTin.Rows.
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
             }
             else
             {

@@ -25,15 +25,7 @@ namespace DoAn
         {
             try
             {
-<<<<<<< HEAD
-<<<<<<< HEAD
                TAIKHOAN dn = context.TAIKHOANs.First(p => p.TENDANGNHAP == txtTenDangNhap.Text && p.MATKHAU == txtMatKhau.Text);
-=======
-                TAIKHOAN dn = context.TAIKHOANs.First(p => p.TENDANGNHAP == txtTenDangNhap.Text && p.MATKHAU == txtMatKhau.Text);
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-=======
-                TAIKHOAN dn = context.TAIKHOANs.First(p => p.TENDANGNHAP == txtTenDangNhap.Text && p.MATKHAU == txtMatKhau.Text);
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
                 if (dn != null)
                 {
                     check = false;

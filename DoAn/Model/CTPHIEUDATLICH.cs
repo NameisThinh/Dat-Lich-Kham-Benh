@@ -11,16 +11,8 @@ namespace DoAn.Model
     {
         [Key]
         [Column(Order = 0)]
-<<<<<<< HEAD
-<<<<<<< HEAD
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MAPHIEUDL { get; set; }
-=======
-=======
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
-        [StringLength(20)]
-        public string MAPHIEUDL { get; set; }
->>>>>>> 03eb0f6d6677e584d919bbd226141ceaf447ad79
 
         [Key]
         [Column(Order = 1)]
