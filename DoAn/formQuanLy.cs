@@ -29,6 +29,9 @@ namespace DoAn
             List<CTPHIEUDATLICH> ct = db.CTPHIEUDATLICHes.ToList();
             list(ct,false);
             grbTraCuu.Visible = false;
+            rdbDaXacNhan.Checked = true;
+            btnCapNhat.Enabled = true;
+            btnXoa.Enabled = true;
         }
         public void list(List<CTPHIEUDATLICH> listCTphieudatlich,bool check)
         {
@@ -84,7 +87,7 @@ namespace DoAn
         {
             Email email = new Email();
             //BENHNHAN bn = new BENHNHAN();
-            List<BENHNHAN> listbn = new List<BENHNHAN>();
+            List<CTPHIEUDATLICH> listbn = new List<CTPHIEUDATLICH>();
             bool check;
             int kt = 0;
             listbn.Clear();
@@ -98,7 +101,7 @@ namespace DoAn
                     if (check == true)
                     {
                         var mabn = int.Parse(row.Cells[0].Value.ToString());
-                        var bnhan = db.BENHNHANs.FirstOrDefault(p => p.MABN == mabn);
+                        var bnhan = db.CTPHIEUDATLICHes.FirstOrDefault(p => p.PHIEUDATLICH.BENHNHAN.MABN == mabn);
                         if (bnhan != null)
                         {
                             listbn.Add(bnhan);
@@ -108,13 +111,14 @@ namespace DoAn
                 }
                 foreach (var item in listbn)
                 {
-                    var ct = db.CTPHIEUDATLICHes.FirstOrDefault(p => p.PHIEUDATLICH.BENHNHAN.MABN == item.MABN);
+                    var ct = db.CTPHIEUDATLICHes.FirstOrDefault(p => p.PHIEUDATLICH.BENHNHAN.MABN == item.PHIEUDATLICH.BENHNHAN.MABN);
                     if (ct != null)
                     {
                         ct.TINHTRANG = true;
                         db.SaveChanges();
-
-                        email.Send(item.EMAIL, "XÁC NHẬN ĐĂNG KÝ THÀNH CÔNG!", "Xin chào " + item.TENBN + ",\nĐơn đăng ký của bạn đã được duyệt.\nXin cảm ơn.!");
+                        DateTime dt = item.PHIEUDATLICH.NGAYLAPPHIEU.Value;
+                        
+                        email.Send(item.PHIEUDATLICH.BENHNHAN.EMAIL, "XÁC NHẬN ĐĂNG KÝ THÀNH CÔNG!", "Xin chào " + item.PHIEUDATLICH.BENHNHAN.TENBN + ","+"\nCảm ơn bạn đã tin tưởng dịch vụ chăm sóc sức khoẻ Hoàn Mỹ.\nĐơn đăng ký của bạn đã được duyệt.\n\n\tMã số: " + item.PHIEUDATLICH.BENHNHAN.MABN + "\n\tHọ tên: "+item.PHIEUDATLICH.BENHNHAN.TENBN+"\n\tEmail: "+item.PHIEUDATLICH.BENHNHAN.EMAIL+"\n\tSDT: "+item.PHIEUDATLICH.BENHNHAN.SDT + "\n\tThời gian khám là: "+dt.Day+ "/" +dt.Month+"/"+dt.Year+ "\n\nKính mong bạn sắp xếp thời gian đến đúng lịch hẹn.\nXin cảm ơn.!");
                         kt++;   
                     }
 
@@ -122,7 +126,7 @@ namespace DoAn
                 formQuanLy_Load(sender, e);
                 if (kt == 0)
                 {
-                    MessageBox.Show("Dữ liệu không thay đổi");
+                    MessageBox.Show("Vui lòng chọn dữ liệu để cập nhật");
                 }
                 else
                 {
@@ -146,10 +150,14 @@ namespace DoAn
             if (rdbDaXacNhan.Checked == true)
             {
                 list(ct, true);
+                btnCapNhat.Enabled = false;
+                btnXoa.Enabled = false;
             }
             else
             {
                 list(ct, false);
+                btnCapNhat.Enabled=true;    
+                btnXoa.Enabled = true;
             }
 
         }
@@ -161,6 +169,7 @@ namespace DoAn
             {
                 List<BENHNHAN> listbn = new List<BENHNHAN>();
                 bool check;
+                int kt = 0;
                 listbn.Clear();
                 try
                 {
@@ -191,11 +200,19 @@ namespace DoAn
                             db.PHIEUDATLICHes.Remove(pdl);
                             db.BENHNHANs.Remove(bn);
                             db.SaveChanges();
+                            kt ++;
                         }
 
                     }
                     formQuanLy_Load(sender, e);
-                    MessageBox.Show("Xoá thành công");
+                    if (kt == 0)
+                    {
+                        MessageBox.Show("Vui lòng chọn dữ liệu để xoá");
+                    }
+                    else
+                    {
+                        MessageBox.Show("xoá thành công");
+                    }
                 }
                 catch (Exception ex)
                 {

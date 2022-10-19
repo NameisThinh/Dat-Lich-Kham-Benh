@@ -35,21 +35,12 @@ namespace DoAn
             }
             catch
             {
-                MessageBox.Show("sai tên đăng nhập hoặc mật khẩu!");
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
             }
         }
 
         private void formDangNhap_Load(object sender, EventArgs e)
         {
-            try
-            {
-                
-                List<TAIKHOAN> facultyList = context.TAIKHOANs.ToList();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
         
     }
