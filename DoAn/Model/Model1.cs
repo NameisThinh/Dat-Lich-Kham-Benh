@@ -7,11 +7,7 @@ namespace DoAn.Model
 {
     public partial class Model1 : DbContext
     {
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
         public Model1()
-========
-        public Model2()
->>>>>>>> load db:DoAn/Model/Model2.cs
             : base("name=Model1")
         {
         }
@@ -50,13 +46,6 @@ namespace DoAn.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<CTPHIEUDATLICH>()
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-========
-                .Property(e => e.MAPHIEUDL)
-                .IsFixedLength();
-
-            modelBuilder.Entity<CTPHIEUDATLICH>()
->>>>>>>> load db:DoAn/Model/Model2.cs
                 .Property(e => e.MABS)
                 .IsFixedLength();
 
@@ -78,13 +67,6 @@ namespace DoAn.Model
                 .IsFixedLength();
 
             modelBuilder.Entity<PHIEUDATLICH>()
-<<<<<<<< HEAD:DoAn/Model/Model1.cs
-========
-                .Property(e => e.MAPHIEUDL)
-                .IsFixedLength();
-
-            modelBuilder.Entity<PHIEUDATLICH>()
->>>>>>>> load db:DoAn/Model/Model2.cs
                 .Property(e => e.MANV)
                 .IsFixedLength();
 

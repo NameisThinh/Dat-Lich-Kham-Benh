@@ -92,7 +92,7 @@ namespace DoAn
         }
         private void tsDangNhap_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Bạn là quan trị viên?", "Xác nhận quyền quản trị viên", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Bạn là quản trị viên?", "Xác nhận", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 formDangNhap dn = new formDangNhap();               
@@ -132,5 +132,6 @@ namespace DoAn
             formTraCuu tc = new formTraCuu();
             loadNoiDung(tc);
         }
+
     }
 }

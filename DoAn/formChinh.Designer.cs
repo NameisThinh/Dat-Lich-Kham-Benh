@@ -29,11 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formChinh));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbNhanVien = new System.Windows.Forms.Label();
             this.lbThongTin = new System.Windows.Forms.Label();
@@ -48,36 +44,9 @@
             this.tsThoat = new System.Windows.Forms.ToolStripButton();
             this.tsThongKe = new System.Windows.Forms.ToolStripButton();
             this.tsHuongDan = new System.Windows.Forms.ToolStripButton();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-<<<<<<< HEAD
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-=======
->>>>>>> parent of ebe7d03 (Full)
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(598, 930);
-            this.panel1.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(598, 930);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -86,50 +55,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.AutoScroll = true;
             this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel3.Location = new System.Drawing.Point(598, 114);
+            this.panel3.Location = new System.Drawing.Point(0, 132);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1233, 816);
+            this.panel3.Size = new System.Drawing.Size(2040, 798);
             this.panel3.TabIndex = 2;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(109, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 159);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "thinh123";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(229, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(226, 85);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.lbNhanVien);
             this.panel2.Controls.Add(this.lbThongTin);
             this.panel2.Controls.Add(this.toolStrip1);
-            this.panel2.Location = new System.Drawing.Point(598, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1233, 114);
+            this.panel2.Size = new System.Drawing.Size(2040, 140);
             this.panel2.TabIndex = 1;
             // 
             // lbNhanVien
             // 
             this.lbNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbNhanVien.AutoSize = true;
+            this.lbNhanVien.BackColor = System.Drawing.Color.Transparent;
             this.lbNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNhanVien.Location = new System.Drawing.Point(939, 69);
+            this.lbNhanVien.Location = new System.Drawing.Point(1758, 93);
             this.lbNhanVien.Name = "lbNhanVien";
-            this.lbNhanVien.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbNhanVien.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbNhanVien.Size = new System.Drawing.Size(136, 31);
             this.lbNhanVien.TabIndex = 2;
             this.lbNhanVien.Text = "Nhân viên";
@@ -137,24 +90,19 @@
             // lbThongTin
             // 
             this.lbThongTin.AutoSize = true;
-            this.lbThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbThongTin.BackColor = System.Drawing.Color.Transparent;
             this.lbThongTin.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(254)));
             this.lbThongTin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-<<<<<<< HEAD
-            this.lbThongTin.Location = new System.Drawing.Point(0, 35);
-            this.lbThongTin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbThongTin.Location = new System.Drawing.Point(3, 78);
             this.lbThongTin.Name = "lbThongTin";
-            this.lbThongTin.Size = new System.Drawing.Size(0, 31);
-=======
-            this.lbThongTin.Location = new System.Drawing.Point(0, 55);
-            this.lbThongTin.Name = "lbThongTin";
-            this.lbThongTin.Size = new System.Drawing.Size(0, 51);
->>>>>>> parent of ebe7d03 (Full)
+            this.lbThongTin.Size = new System.Drawing.Size(201, 51);
             this.lbThongTin.TabIndex = 1;
+            this.lbThongTin.Text = "Thông tin";
             // 
             // toolStrip1
             // 
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.toolStrip1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("toolStrip1.BackgroundImage")));
             this.toolStrip1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
@@ -168,9 +116,9 @@
             this.tsHuongDan});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip1.Size = new System.Drawing.Size(1233, 55);
+            this.toolStrip1.Size = new System.Drawing.Size(2040, 55);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -190,7 +138,7 @@
             // 
             this.tsDangNhap.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsDangNhap.Name = "tsDangNhap";
-            this.tsDangNhap.Size = new System.Drawing.Size(220, 32);
+            this.tsDangNhap.Size = new System.Drawing.Size(355, 54);
             this.tsDangNhap.Text = "Đăng nhập";
             this.tsDangNhap.Click += new System.EventHandler(this.tsDangNhap_Click);
             // 
@@ -198,7 +146,7 @@
             // 
             this.tsDangXuat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsDangXuat.Name = "tsDangXuat";
-            this.tsDangXuat.Size = new System.Drawing.Size(220, 32);
+            this.tsDangXuat.Size = new System.Drawing.Size(355, 54);
             this.tsDangXuat.Text = "Đăng xuất";
             this.tsDangXuat.Click += new System.EventHandler(this.tsDangXuat_Click);
             // 
@@ -207,122 +155,86 @@
             this.thoátToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(220, 32);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(355, 54);
             this.thoátToolStripMenuItem.Text = "Thoát";
             this.thoátToolStripMenuItem.Click += new System.EventHandler(this.tsThoat_Click);
             // 
             // tsGioiThieu
             // 
-            this.tsGioiThieu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsGioiThieu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tsGioiThieu.Image = ((System.Drawing.Image)(resources.GetObject("tsGioiThieu.Image")));
             this.tsGioiThieu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsGioiThieu.Name = "tsGioiThieu";
-<<<<<<< HEAD
-            this.tsGioiThieu.Size = new System.Drawing.Size(110, 32);
-=======
-            this.tsGioiThieu.Size = new System.Drawing.Size(170, 49);
->>>>>>> parent of ebe7d03 (Full)
+            this.tsGioiThieu.Size = new System.Drawing.Size(202, 49);
             this.tsGioiThieu.Text = "Giới thiệu";
             this.tsGioiThieu.Click += new System.EventHandler(this.tsGioiThieu_Click);
             // 
             // tsDatLich
             // 
-            this.tsDatLich.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsDatLich.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tsDatLich.Image = ((System.Drawing.Image)(resources.GetObject("tsDatLich.Image")));
             this.tsDatLich.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsDatLich.Name = "tsDatLich";
-<<<<<<< HEAD
-            this.tsDatLich.Size = new System.Drawing.Size(90, 32);
-=======
-            this.tsDatLich.Size = new System.Drawing.Size(138, 49);
->>>>>>> parent of ebe7d03 (Full)
+            this.tsDatLich.Size = new System.Drawing.Size(170, 49);
             this.tsDatLich.Text = "Đặt lịch";
             this.tsDatLich.Click += new System.EventHandler(this.tsDatLich_Click);
             // 
             // tsQuanLy
             // 
-            this.tsQuanLy.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsQuanLy.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tsQuanLy.Image = ((System.Drawing.Image)(resources.GetObject("tsQuanLy.Image")));
             this.tsQuanLy.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsQuanLy.Name = "tsQuanLy";
-<<<<<<< HEAD
-            this.tsQuanLy.Size = new System.Drawing.Size(89, 32);
-=======
-            this.tsQuanLy.Size = new System.Drawing.Size(138, 49);
->>>>>>> parent of ebe7d03 (Full)
+            this.tsQuanLy.Size = new System.Drawing.Size(170, 49);
             this.tsQuanLy.Text = "Quản lý";
             this.tsQuanLy.Click += new System.EventHandler(this.tsQuanLy_Click);
             // 
             // tsThoat
             // 
             this.tsThoat.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsThoat.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsThoat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tsThoat.Image = ((System.Drawing.Image)(resources.GetObject("tsThoat.Image")));
             this.tsThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsThoat.Name = "tsThoat";
             this.tsThoat.RightToLeft = System.Windows.Forms.RightToLeft.No;
-<<<<<<< HEAD
-            this.tsThoat.Size = new System.Drawing.Size(71, 32);
-=======
-            this.tsThoat.Size = new System.Drawing.Size(111, 49);
->>>>>>> parent of ebe7d03 (Full)
+            this.tsThoat.Size = new System.Drawing.Size(143, 49);
             this.tsThoat.Text = "Thoát";
             this.tsThoat.Click += new System.EventHandler(this.tsThoat_Click);
             // 
             // tsThongKe
             // 
-            this.tsThongKe.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsThongKe.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tsThongKe.Image = ((System.Drawing.Image)(resources.GetObject("tsThongKe.Image")));
             this.tsThongKe.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsThongKe.Name = "tsThongKe";
-<<<<<<< HEAD
-            this.tsThongKe.Size = new System.Drawing.Size(104, 32);
-=======
-            this.tsThongKe.Size = new System.Drawing.Size(165, 49);
->>>>>>> parent of ebe7d03 (Full)
+            this.tsThongKe.Size = new System.Drawing.Size(197, 49);
             this.tsThongKe.Text = "Thống kê";
             this.tsThongKe.Click += new System.EventHandler(this.tsThongKe_Click);
             // 
             // tsHuongDan
             // 
-            this.tsHuongDan.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.tsHuongDan.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.tsHuongDan.Image = ((System.Drawing.Image)(resources.GetObject("tsHuongDan.Image")));
             this.tsHuongDan.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsHuongDan.Name = "tsHuongDan";
-<<<<<<< HEAD
-            this.tsHuongDan.Size = new System.Drawing.Size(122, 32);
+            this.tsHuongDan.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tsHuongDan.Size = new System.Drawing.Size(226, 49);
-            this.tsHuongDan.Size = new System.Drawing.Size(226, 49);
-            this.tsHuongDan.Size = new System.Drawing.Size(226, 49);
-=======
-            this.tsHuongDan.Size = new System.Drawing.Size(194, 49);
->>>>>>> parent of ebe7d03 (Full)
             this.tsHuongDan.Text = "Hướng dẫn";
             this.tsHuongDan.ToolTipText = "toolStripButton4";
             this.tsHuongDan.Click += new System.EventHandler(this.tsHuongDan_Click);
             // 
             // formChinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1827, 930);
+            this.ClientSize = new System.Drawing.Size(2036, 930);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "formChinh";
             this.Text = "Chương trình quản lý đặt lịch khám";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formChinh_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -332,36 +244,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel1;
+
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbNhanVien;
+        private System.Windows.Forms.Label lbThongTin;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripDropDownButton tsHeThong;
+        private System.Windows.Forms.ToolStripMenuItem tsDangNhap;
+        private System.Windows.Forms.ToolStripMenuItem tsDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton tsGioiThieu;
         private System.Windows.Forms.ToolStripButton tsDatLich;
-        private System.Windows.Forms.ToolStripButton tsThongKe;
-<<<<<<< HEAD
-        private System.Windows.Forms.ToolStripButton tsHuongDan;
-        private System.Windows.Forms.Label lbThongTin;
-        private System.Windows.Forms.ToolStripDropDownButton tsHeThong;
-        private System.Windows.Forms.ToolStripMenuItem tsDangNhap;
-        private System.Windows.Forms.ToolStripMenuItem tsDangXuat;
-
-        private System.Windows.Forms.Label lbNhanVien;
-        private System.Windows.Forms.PictureBox pictureBox1;
-
-        private System.Windows.Forms.ToolStripButton tsHuongDan;
-        private System.Windows.Forms.ToolStripButton tsHuongDan;
-=======
->>>>>>> parent of ebe7d03 (Full)
-        private System.Windows.Forms.ToolStripButton tsHuongDan;
-        private System.Windows.Forms.Label lbThongTin;
-        private System.Windows.Forms.ToolStripDropDownButton tsHeThong;
-        private System.Windows.Forms.ToolStripMenuItem tsDangNhap;
-        private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
-        private System.Windows.Forms.ToolStripButton tsThoat;
         private System.Windows.Forms.ToolStripButton tsQuanLy;
-        private System.Windows.Forms.ToolStripMenuItem tsDangXuat;
-        private System.Windows.Forms.Label lbNhanVien;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripButton tsThoat;
+        private System.Windows.Forms.ToolStripButton tsThongKe;
+        private System.Windows.Forms.ToolStripButton tsHuongDan;
     }
 }
