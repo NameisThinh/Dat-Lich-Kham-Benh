@@ -20,6 +20,8 @@ namespace DoAn.Model
 
         public DateTime? NGAYLAPPHIEU { get; set; }
 
+        public DateTime? NGAYLAPPHIEU { get; set; }
+
         [StringLength(20)]
         public string MANV { get; set; }
 

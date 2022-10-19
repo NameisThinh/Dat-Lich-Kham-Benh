@@ -19,8 +19,7 @@ namespace DoAn
             InitializeComponent();
         }
         public bool check =true;
-        static Model1 context = new Model1();
-        public string matk = "";
+        static Model2 context = new Model2();
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
             try
@@ -31,17 +30,24 @@ namespace DoAn
                     check = false;
                     this.Hide();
                 }
-                matk = dn.MATK;
             }
             catch
             {
-                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
+                MessageBox.Show("sai tên đăng nhập hoặc mật khẩu!");
             }
         }
 
         private void formDangNhap_Load(object sender, EventArgs e)
         {
+            try
+            {
+                
+                List<TAIKHOAN> facultyList = context.TAIKHOANs.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-        
     }
 }
